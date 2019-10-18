@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/material.dart' as prefix;
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sdgs/RankingScreen.dart';
-import 'package:flutter_dialogflow/dialogflow_v2.dart';
+
 
 class HomePage extends StatefulWidget {
   @override
