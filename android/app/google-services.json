@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "735292226662",
+    "firebase_url": "https://sdgs-c4598.firebaseio.com",
+    "project_id": "sdgs-c4598",
+    "storage_bucket": "sdgs-c4598.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735292226662:android:a15b8da65ed3fa52e881a7",
+        "android_client_info": {
+          "package_name": "com.example.sdgs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "735292226662-8qafq25v5kdvbvc7ga26idju4h94fnjm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDD-nV6BNhtUr756-xAIeVrp94fJRKP-sg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "735292226662-8qafq25v5kdvbvc7ga26idju4h94fnjm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
