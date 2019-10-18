@@ -12,7 +12,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   bool isSelected = true;
-  PageController controller
+  PageController controller;
 
   Drawer getNavDrawer(BuildContext context) {
     var aboutChild = AboutListTile(
