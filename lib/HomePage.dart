@@ -12,6 +12,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   bool isSelected = true;
+  PageController controller
 
   Drawer getNavDrawer(BuildContext context) {
     var aboutChild = AboutListTile(
@@ -96,28 +97,26 @@ class _HomePageState extends State<HomePage> {
     ));
   }
 
-  void _dialogFlowResponse(query) async {
-    AuthGoogle authGoogle = await AuthGoogle(fileJson: "assets/chat-boot.json").build();
-    Dialogflow dialogflow = Dialogflow(authGoogle: authGoogle,language: Language.english);
-    AIResponse response = await dialogflow.detectIntent("Hi!!!");
-    print('respon'+response.getMessage());
-    print('respond:'+response.toString());
-    print('respond2:'+response.queryResult.toString());
-    print('respond4:'+response.queryResult.fulfillmentMessages.toString());
-    print('respond5:'+response.queryResult.fulfillmentText);
-  }
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: prefix.Text('SDGs')),
       drawer: getNavDrawer(context),
-      body: RankingScreen(),
+      body: PageView(controller: controller,children: <Widget>[Center(child: Text('To Do List'),),RankingScreen()],),
       bottomNavigationBar: Row(
         children: <Widget>[
           _BottomNavigationButton(
             'assets/flare/TasksIcon.flr',
             label: 'Actions',
-            tap: () => _dialogFlowResponse('SDGs'),
+            tap: () {
+              controller.animateTo(1, duration: Duration(milliseconds: 300), curve: Curves.easeIn);
+              setState(() {
+                isSelected = !isSelected;
+              });            },
             isSelected: !isSelected,
             hasNotification: isSelected,
             iconSize: const Size(24, 25),
@@ -126,7 +125,12 @@ class _HomePageState extends State<HomePage> {
           _BottomNavigationButton(
             'assets/flare/TeamIcon.flr',
             label: 'Ranking',
-            tap: () => isSelected = !isSelected,
+            tap: () {
+              controller.animateTo(0, duration: Duration(milliseconds: 300), curve: Curves.easeIn);
+              setState(() {
+                isSelected = !isSelected;
+              });
+            },
             isSelected: isSelected,
             hasNotification: !isSelected,
             iconSize: const Size(25, 29),
