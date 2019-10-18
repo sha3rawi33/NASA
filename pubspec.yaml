@@ -28,7 +28,6 @@ dependencies:
   shared_preferences: ^0.5.3+4
   font_awesome_flutter: ^8.2.0
   flare_flutter: ^1.5.5
-  flutter_dialogflow: ^0.1.2
 
 
 

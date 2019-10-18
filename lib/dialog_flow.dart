@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart' as prefix0;
 import 'fact_message.dart';
-import 'package:flutter_dialogflow/dialogflow_v2.dart';
 
 
 class FlutterFactsDialogFlow extends StatefulWidget {
@@ -42,20 +41,6 @@ class _FlutterFactsDialogFlowState extends State<FlutterFactsDialogFlow> {
     );
   }
 
-  void _dialogFlowResponse(query) async {
-    _textController.clear();
-    AuthGoogle authGoogle = await AuthGoogle(fileJson: 'assets/your_file.json').build();
-    Dialogflow dialogflow = Dialogflow(authGoogle: authGoogle);
-    AIResponse response= await dialogflow.detectIntent(query);
-    setState(() {
-      print('respond:'+response.toString());
-      print('respond1:'+response.queryResult.fulfillmentText);
-      print('respond2:'+response.queryResult.toString());
-      print('respond4:'+response.queryResult.fulfillmentMessages.toString());
-
-    });
-  }
-
   void _submitQuery(String text) {
     _textController.clear();
     FactsMessage message = new FactsMessage(
@@ -66,7 +51,6 @@ class _FlutterFactsDialogFlowState extends State<FlutterFactsDialogFlow> {
     setState(() {
       _messages.insert(0, message);
     });
-    _dialogFlowResponse(text);
   }
 
   @override
