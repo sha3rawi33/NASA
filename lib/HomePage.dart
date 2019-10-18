@@ -11,7 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  bool isSelected = true;
+  int index = 0;
   PageController controller;
 
   Drawer getNavDrawer(BuildContext context) {
@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     SizedBox(height: 4,),
-                    prefix.Text(
+                    Text(
                       'Mohamed Khaled',
                       style: TextStyle(
                         fontFamily: 'MontserratMedium',
@@ -97,9 +97,32 @@ class _HomePageState extends State<HomePage> {
     ));
   }
 
+@override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    controller=PageController(initialPage: index);
+    controller.addListener((){
+      setState(() {
+        if(index==1){
+          index=0;
+        }else{
+          index=1;
+        }
+      });
+    });
+  }
 
-
-
+  void  _showPageIndex(int index) {
+    setState(() {
+      index = index;
+    });
+    controller.animateToPage(
+      index,
+      duration: const Duration(milliseconds: 200),
+      curve: Curves.easeOutCubic,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -112,27 +135,18 @@ class _HomePageState extends State<HomePage> {
           _BottomNavigationButton(
             'assets/flare/TasksIcon.flr',
             label: 'Actions',
-            tap: () {
-              controller.animateTo(1, duration: Duration(milliseconds: 300), curve: Curves.easeIn);
-              setState(() {
-                isSelected = !isSelected;
-              });            },
-            isSelected: !isSelected,
-            hasNotification: isSelected,
+            tap:()=> _showPageIndex(0),
+            isSelected: index==0,
+            hasNotification: index==1,
             iconSize: const Size(24, 25),
             padding: const EdgeInsets.only(top: 15),
           ),
           _BottomNavigationButton(
             'assets/flare/TeamIcon.flr',
             label: 'Ranking',
-            tap: () {
-              controller.animateTo(0, duration: Duration(milliseconds: 300), curve: Curves.easeIn);
-              setState(() {
-                isSelected = !isSelected;
-              });
-            },
-            isSelected: isSelected,
-            hasNotification: !isSelected,
+            tap: () => _showPageIndex(1),
+            isSelected: index==1,
+            hasNotification: false,
             iconSize: const Size(25, 29),
             padding: const EdgeInsets.only(top: 10),
           ),

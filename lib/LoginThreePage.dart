@@ -1,9 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:wave/config.dart';
 import 'package:wave/wave.dart';
 
-class SignUpPage extends StatelessWidget {
+class LoginThreePage extends StatelessWidget {
   static final String path = "lib/src/pages/login/login3.dart";
   @override
   Widget build(BuildContext context) {
@@ -37,11 +36,11 @@ class SignUpPage extends StatelessWidget {
           ListView(
             children: <Widget>[
               Container(
-                height: 450,
+                height: 400,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text("SignUp", textAlign: TextAlign.center, style: TextStyle(
+                    Text("Login", textAlign: TextAlign.center, style: TextStyle(
                         color: Colors.white70,
                         fontWeight: FontWeight.bold,
                         fontSize: 28.0
@@ -73,27 +72,6 @@ class SignUpPage extends StatelessWidget {
                       child: TextField(
                         decoration: InputDecoration(
                             prefixIcon: Icon(Icons.lock, color: Colors.black26,),
-                            hintText: "Email",
-                            hintStyle: TextStyle(
-                              color: Colors.black26,
-                            ),
-                            filled: true,
-                            fillColor: Colors.white,
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.all(Radius.circular(40.0)),
-                            ),
-                            contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 16.0)
-                        ),
-                      ),
-                    ),
-                    Card(
-                      margin: EdgeInsets.only(left: 30, right:30, top:20),
-                      elevation: 11,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(40))),
-                      child: TextField(
-                        decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.lock, color: Colors.black26,),
                             hintText: "Password",
                             hintStyle: TextStyle(
                               color: Colors.black26,
@@ -108,42 +86,23 @@ class SignUpPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Card(
-                      margin: EdgeInsets.only(left: 30, right:30, top:20),
-                      elevation: 11,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(40))),
-                      child: TextField(
-                        decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.lock, color: Colors.black26,),
-                            hintText: "Confirm Password",
-                            hintStyle: TextStyle(
-                              color: Colors.black26,
-                            ),
-                            filled: true,
-                            fillColor: Colors.white,
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.all(Radius.circular(40.0)),
-                            ),
-                            contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 16.0)
-                        ),
-                      ),
-                    ),
-
                     Container(
                       width: double.infinity,
                       padding: EdgeInsets.all(30.0),
                       child: RaisedButton(
                         padding: EdgeInsets.symmetric(vertical: 16.0),
                         color: Colors.pink,
-                        onPressed: (){},
+                        onPressed: (){Navigator.of(context).pushNamed('/action');},
                         elevation: 11,
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(40.0))),
-                        child: Text("Sign Up", style: TextStyle(
+                        child: Text("Login", style: TextStyle(
                             color: Colors.white70
                         )),
                       ),
                     ),
+                    Text("Forgot your password?", style: TextStyle(
+                        color: Colors.white
+                    ))
                   ],
                 ),
               ),
@@ -153,7 +112,7 @@ class SignUpPage extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
-                    Text("or, Sign Up with"),
+                    Text("or, connect with"),
                     SizedBox(height: 20.0,),
                     Row(
                       children: <Widget>[
@@ -187,8 +146,8 @@ class SignUpPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text("Do you have an account?"),
-                        FlatButton(child: Text("Log In"), textColor: Colors.indigo, onPressed: (){Navigator.of(context).pushNamed('/log-in');},)
+                        Text("Dont have an account?"),
+                        FlatButton(child: Text("Sign up"), textColor: Colors.indigo, onPressed: (){Navigator.of(context).pushNamed('/sign-up');},)
                       ],
                     )
                   ],

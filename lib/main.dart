@@ -1,9 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:sdgs/LoginPage.dart';
+import 'package:sdgs/LoginThreePage.dart';
 import 'HomePage.dart';
 import 'SingupPage.dart';
 import 'actions.dart';
+import 'introScreen.dart';
 
 
 void main() => runApp(MyApp());
@@ -17,14 +18,16 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: SmartWalletOnboardingPage(),
       routes: {
-        '/log-in':(context)=> LoginPage(),
-        '/sign-up': (context)=> SignupScreen(),
+        '/intro': (context)=> SmartWalletOnboardingPage(),
+        '/log-in':(context)=> LoginThreePage(),
+        '/sign-up': (context)=> SignUpPage(),
         '/action':(context)=> ActionsList(),
         '/home':(context)=>HomePage(),
       },
     );
   }
 }
+
 

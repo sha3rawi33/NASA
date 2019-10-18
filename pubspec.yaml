@@ -30,6 +30,11 @@ dependencies:
   flare_flutter: ^1.5.5
   flutter_dialogflow: ^0.1.2
   cached_network_image: ^1.1.2+1
+  wave: ^0.0.8
+  carousel_pro: ^0.0.1
+  intro_views_flutter: ^2.8.0
+
+
 
 
 
