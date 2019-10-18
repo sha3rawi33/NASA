@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:sdgs/LoginPage.dart';
+import 'actions.dart';
 
 import 'HomePage.dart';
 import 'SingupPage.dart';
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/log-in':(context)=> LoginPage(),
         '/sign-up': (context)=> SignupScreen(),
-        '/home':(context)=>HomePage()
+        '/home':(context)=>HomePage(),
+        '/action':(context)=> Actions(),
       },
     );
   }
