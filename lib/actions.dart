@@ -2,13 +2,13 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
-class Actions extends StatefulWidget {
-  Actions({Key key}) : super(key: key);
+class ActionsList extends StatefulWidget {
+  ActionsList({Key key}) : super(key: key);
 
-  _Actionsstate createState() => _Actionsstate();
+  _ActionsListstate createState() => _ActionsListstate();
 }
 
-class _Actionsstate extends State<Actions> {
+class _ActionsListstate extends State<ActionsList> {
   final TextStyle dropdownMenuItem =
   TextStyle(color: Colors.black, fontSize: 18);
 
