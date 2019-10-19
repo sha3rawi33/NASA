@@ -108,22 +108,17 @@ class _ActionsListstate extends State<ActionsList> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
                         icon: Icon(
-                          Icons.menu,
+                          Icons.arrow_back,
                           color: Colors.white,
                         ),
                       ),
                       Text(
                         "Institutes",
                         style: TextStyle(color: Colors.white, fontSize: 24),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.filter_list,
-                          color: Colors.white,
-                        ),
                       ),
                     ],
                   ),

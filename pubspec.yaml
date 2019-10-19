@@ -33,6 +33,7 @@ dependencies:
   wave: ^0.0.8
   carousel_pro: ^0.0.1
   intro_views_flutter: ^2.8.0
+  bottom_navy_bar: ^5.2.0
 
 
 

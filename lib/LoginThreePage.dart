@@ -92,7 +92,7 @@ class LoginThreePage extends StatelessWidget {
                       child: RaisedButton(
                         padding: EdgeInsets.symmetric(vertical: 16.0),
                         color: Colors.pink,
-                        onPressed: (){Navigator.of(context).pushNamed('/action');},
+                        onPressed: (){Navigator.of(context).pushReplacementNamed('/home');},
                         elevation: 11,
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(40.0))),
                         child: Text("Login", style: TextStyle(

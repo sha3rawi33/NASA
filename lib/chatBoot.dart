@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_challenges/core/presentation/res/assets.dart' as assets;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'dart:math';
 
@@ -12,8 +11,8 @@ class _ChatTwoPageState extends State<ChatTwoPage> {
   String text;
   TextEditingController _controller;
   final List<String> avatars = [
-    assets.avatars[3],
-    assets.avatars[4],
+    'https://img.icons8.com/bubbles/2x/user.png',
+    'https://image.shutterstock.com/image-vector/robot-icon-bot-sign-design-260nw-715962319.jpg'
   ];
   final List<Message> messages = [
     Message(0, "But I may not go if the weather is bad."),
@@ -137,11 +136,11 @@ class _ChatTwoPageState extends State<ChatTwoPage> {
           decoration: BoxDecoration(
               color: current ? Theme.of(context).primaryColor : Colors.white,
               borderRadius: BorderRadius.circular(10.0)),
-          child: Text(
+          child: FittedBox(child:Text(
             message.description,
             style: TextStyle(
-                color: current ? Colors.white : Colors.black, fontSize: 18.0),
-          ),
+                color: current ? Colors.white : Colors.black, fontSize: 15.0),
+          ) ,),
         ),
         if (current) ...[
           const SizedBox(width: 5.0),

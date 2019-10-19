@@ -1,8 +1,8 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:sdgs/LoginThreePage.dart';
+import 'package:sdgs/chatBoot.dart';
 import 'HomePage.dart';
-import 'SingupPage.dart';
+import 'package:sdgs/SignUpPage.dart';
 import 'actions.dart';
 import 'introScreen.dart';
 
@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
         '/sign-up': (context)=> SignUpPage(),
         '/action':(context)=> ActionsList(),
         '/home':(context)=>HomePage(),
+        '/chat-bot': (context) => ChatTwoPage()
       },
     );
   }
